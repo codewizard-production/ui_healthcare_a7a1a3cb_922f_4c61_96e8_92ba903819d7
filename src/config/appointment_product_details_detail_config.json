@@ -1,0 +1,44 @@
+{
+
+"appointment": [
+    {
+        "key": "AppointmentID",
+        "type": "keyid",
+        "UIComponentTitle": "Appointment"
+    }
+        ,{
+        "key": "Date",
+        "label": "Date",
+        "type": "datetime",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "AppointmentDoctor",
+        "label": "Doctor",
+        "type": "dropdown",
+        "valueId": "DoctorID",
+        "nameId": "DoctorName",
+        "contentId": "DoctorName",
+        "source": "Doctor",
+        "create": true,
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "AppointmentDoctor",
+        "label": "Doctor",
+        "type": "dropdown",
+        "valueId": "DoctorID",
+        "nameId": "Specialization",
+        "contentId": "Specialization",
+        "source": "Doctor",
+        "create": true,
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+]
+}

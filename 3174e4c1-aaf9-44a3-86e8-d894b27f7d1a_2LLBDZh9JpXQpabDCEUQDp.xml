@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Model">
+            <EntityType HasStream="false" Name="Patient">
+                <Key>
+                    <PropertyRef Name="PatientID"/>
+                </Key>
+                <Property Name="PatientID" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="PatientName" Type="Edm.String" isUnique="false"/>
+                <Property Name="PatientAge" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="ContactInfo" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Dob" Type="Edm.DateTimeOffset" isUnique="false"/>
+                <NavigationProperty Name="Appointment" Type="Collection(Model.Appointment)"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Doctor">
+                <Key>
+                    <PropertyRef Name="DoctorID"/>
+                </Key>
+                <Property Name="DoctorID" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="DoctorName" Type="Edm.String" isUnique="false"/>
+                <Property Name="Specialization" Type="Edm.String" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Appointment">
+                <Key>
+                    <PropertyRef Name="AppointmentID"/>
+                </Key>
+                <Property Name="AppointmentID" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Date" Type="Edm.DateTimeOffset" isUnique="false"/>
+                <NavigationProperty Name="Doctor" Type="Model.Doctor"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Patients" EntityType="Model.Patient">
+                    <NavigationPropertyBinding Path="Appointment" Target="Appointments"/>
+                </EntitySet>
+                <EntitySet Name="Doctors" EntityType="Model.Doctor"/>
+                <EntitySet Name="Appointments" EntityType="Model.Appointment">
+                    <NavigationPropertyBinding Path="Doctor" Target="Doctors"/>
+                </EntitySet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

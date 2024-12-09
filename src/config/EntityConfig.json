@@ -1,0 +1,132 @@
+{
+        "appointment": [
+                        {
+                            "key": "AppointmentID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Date",
+                            "label": "Date",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.DateTimeOffset",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "Date is required"
+                            ]
+                        },
+                    {
+                        "key": "AppointmentDoctor",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "patient": [
+                        {
+                            "key": "PatientID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "PatientName",
+                            "label": "PatientName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "PatientName is required"
+                            ]
+                        },
+                        {
+                            "key": "PatientAge",
+                            "label": "PatientAge",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Int32",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "PatientAge is required"
+                            ]
+                        },
+                        {
+                            "key": "ContactInfo",
+                            "label": "ContactInfo",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Int32",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "ContactInfo is required"
+                            ]
+                        },
+                        {
+                            "key": "Dob",
+                            "label": "Dob",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.DateTimeOffset",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "Dob is required"
+                            ]
+                        },
+                    {
+                        "key": "PatientAppointment",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "doctor": [
+                        {
+                            "key": "DoctorID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "DoctorName",
+                            "label": "DoctorName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "DoctorName is required"
+                            ]
+                        },
+                        {
+                            "key": "Specialization",
+                            "label": "Specialization",
+                            "type": "text",
+                                "editable": true,
+                                "validators": [
+                                    "required"
+                                ],
+                                "validationMessages": [
+                                    "Specialization is required"
+                                ]
+                            }
+        ]
+}
